@@ -121,3 +121,74 @@ input{
 input::placeholder{
   color:#66749a!important;
 }
+
+
+/* ===== FIXED LAYERING / FULL-SCREEN ANIMATION =====
+   The earlier V4 override accidentally changed full-screen animation
+   layers from absolute to relative. These rules restore them. */
+.world{isolation:isolate}
+.world:before{
+  z-index:0;
+  opacity:.60!important;
+  filter:saturate(.95) brightness(1.03)!important;
+  background-position:center!important;
+  background-size:cover!important;
+}
+.world:after{z-index:1!important;opacity:.46}
+.wash{
+  position:absolute!important;
+  inset:0!important;
+  z-index:2!important;
+  background:linear-gradient(180deg,rgba(255,255,255,.12),rgba(255,250,246,.05) 42%,rgba(255,255,255,.10))!important;
+  pointer-events:none;
+}
+.petals{
+  position:absolute!important;
+  inset:0!important;
+  z-index:9!important;
+  overflow:hidden;
+  pointer-events:none;
+}
+.petal{
+  position:absolute!important;
+  top:-40px!important;
+}
+.cloud-layer{
+  position:absolute!important;
+  inset:0!important;
+  z-index:6!important;
+  overflow:hidden;
+  pointer-events:none;
+}
+.animal-rain{
+  position:absolute!important;
+  inset:0!important;
+  z-index:16!important;
+  overflow:hidden;
+  pointer-events:none;
+}
+.creatures{
+  position:absolute!important;
+  inset:0!important;
+  z-index:17!important;
+  overflow:hidden;
+  pointer-events:none;
+}
+.panel{
+  position:relative!important;
+  z-index:12!important;
+}
+.falling-animal{
+  position:absolute!important;
+  pointer-events:auto!important;
+}
+.creatures .sprite,
+.creatures .gaming span:not(.controller),
+.creatures .picnic span:not(.food),
+.creatures .dancers span{
+  pointer-events:auto!important;
+}
+/* Make moving scenery visible without washing out the artwork */
+.paper{
+  background:rgba(255,249,238,.88)!important;
+}

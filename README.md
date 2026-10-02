@@ -41,3 +41,7 @@ This final package includes:
 - dark berry-pink headings and deep midnight-blue text for readability
 - all birthday quiz questions, forced-correct progression, ending message and password gate
 - no personal photographs
+
+
+## V5 fixed
+Restores all animation layers to full-screen absolute positioning, spreads petals across the viewport, restores foreground/falling animals, and increases scenic illustration visibility. CSS/JS URLs include a cache-busting version tag.
